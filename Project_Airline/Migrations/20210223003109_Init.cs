@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
+using System.IO;
 
 namespace Project_Airline.Migrations
 {
@@ -22,6 +23,8 @@ namespace Project_Airline.Migrations
                 {
                     table.PrimaryKey("PK_Airline", x => x.Id);
                 });
+            var sqlFile = Path.Combine(".\\Database Script", @"data.sql");
+            migrationBuilder.Sql(File.ReadAllText(sqlFile));
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
