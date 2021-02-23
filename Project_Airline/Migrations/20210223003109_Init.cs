@@ -23,7 +23,7 @@ namespace Project_Airline.Migrations
                 {
                     table.PrimaryKey("PK_Airline", x => x.Id);
                 });
-            var sqlFile = Path.Combine(".\\Database Script", @"data.sql");
+            var sqlFile = Path.Combine(".\\DatabaseScript", @"data.sql");
             migrationBuilder.Sql(File.ReadAllText(sqlFile));
         }
 
